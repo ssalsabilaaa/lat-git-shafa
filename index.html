@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Project - Home</title>
-    <!-- Tailwind CSS CDN untuk mempermudah styling kelompok -->
+    
+    <!-- 1. Perbaikan Link Play CDN Resmi Tailwind CSS -->
     <script src="https://tailwindcss.com"></script>
+    
+    <!-- 2. Menghubungkan File style.css Custom Kelompok -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
@@ -13,35 +17,50 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <!-- Logo / Nama Toko -->
-            <a href="index.html" class="text-2xl font-bold text-blue-600">TokoKelompok</a>
+            <a href="index.html" class="text-2xl font-bold text-blue-600 transition hover:opacity-80">TokoKelompok</a>
             
             <!-- Area Menu Kosong (Akan diisi oleh tim navigasi/kategori) -->
             <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <!-- Menu utama diletakkan di sini -->
+                <!-- Contoh Penempatan Menu Nanti:
+                <a href="#" class="hover:text-blue-600">Produk Terbaru</a>
+                <a href="#" class="hover:text-blue-600">Promo</a> 
+                -->
             </nav>
 
-            <!-- Area Fitur Tambahan (Misal: Keranjang / Akun) -->
+            <!-- Area Fitur Tambahan (Misal: Keranjang Belanja dengan Badge Pulse) -->
             <div class="flex items-center space-x-4">
-                <!-- Komponen interaktif diletakkan di sini -->
+                <div class="relative cursor-pointer p-2">
+                    <!-- Icon keranjang belanja placeholder -->
+                    <span class="text-xl">🛒</span>
+                    <!-- Badge Pulse Aktif dari style.css -->
+                    <span class="cart-badge-pulse absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- [TUGAS SISWA A] - STRUKTUR UTAMA HOMEPAGE -->
     <main class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Konten Hero / Banner Utama -->
-        <section class="text-center py-12 bg-blue-50 rounded-2xl mb-8">
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-2">Selamat Datang di TokoKelompok</h1>
-            <p class="text-gray-600">Project e-commerce kolaborasi tim.</p>
+        
+        <!-- Konten Hero / Banner Utama Menggunakan Gradasi Custom dari style.css -->
+        <section class="shop-hero-gradient text-center py-16 px-6 rounded-2xl mb-8 shadow-sm">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Selamat Datang di TokoKelompok</h1>
+            <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">Project e-commerce hasil kolaborasi dan kerja keras tim. Temukan produk-produk terbaik pilihan kami di sini.</p>
         </section>
 
-        <!-- Placeholder untuk Produk (Akan diintegrasikan dengan bagian produk) -->
-        <section id="main-content">
-            <!-- Anggota tim lain bisa menyisipkan grid produk di sini -->
+        <!-- Placeholder untuk Produk (Area Integrasi Anggota Tim Lain) -->
+        <section id="main-content" class="py-4">
+            <!-- Anggota tim lain bisa menyisipkan grid produk di sini. 
+                 Mereka bisa menggunakan class 'product-card-transition' dan 'product-card-hover' 
+                 yang sudah disediakan di style.css -->
+            <div class="text-center py-12 border-2 border-dashed border-gray-200 rounded-xl">
+                <p class="text-gray-400 text-sm">Bagian konten produk dan katalog utama siap diintegrasikan di area ini.</p>
+            </div>
         </section>
+        
     </main>
 
-    <!-- Footer Standar -->
+    <!-- Footer Standar Kelompok -->
     <footer class="bg-white border-t py-6 text-center text-sm text-gray-500 mt-12">
         <p>&copy; 2026 TokoKelompok. Project Tugas Akhir.</p>
     </footer>
