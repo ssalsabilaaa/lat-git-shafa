@@ -5,64 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Project - Home</title>
     
-    <!-- 1. Perbaikan Link Play CDN Resmi Tailwind CSS -->
-    <script src="https://tailwindcss.com"></script>
+    <!-- Perbaikan Link Play CDN Resmi Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 2. Menghubungkan File style.css Custom Kelompok -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Custom (Digabungkan Langsung di Sini) -->
+    <style>
+        /* Pengaturan Font Utama */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Background Hero Section Custom */
+        .shop-hero-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #f3e8ff 100%);
+        }
+
+        /* Indikator Animasi Badge Keranjang */
+        .cart-badge-pulse {
+            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.85;
+                transform: scale(1.15);
+            }
+        }
+
+        /* Class Helper untuk Kartu Produk (Siap Dipakai Siswa B) */
+        .product-card-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
     <!-- [TUGAS SISWA A] - NAVBAR UTAMA -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- Logo / Nama Toko -->
-            <a href="index.html" class="text-2xl font-bold text-blue-600 transition hover:opacity-80">TokoKelompok</a>
+            <a href="index.html" class="text-2xl font-extrabold text-indigo-600 tracking-tight flex items-center gap-2 transition hover:opacity-80">
+                <span class="text-2xl">🛍️</span>
+                <span>Toko<span class="text-slate-900">Kelompok</span></span>
+            </a>
             
-            <!-- Area Menu Kosong (Akan diisi oleh tim navigasi/kategori) -->
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <!-- Contoh Penempatan Menu Nanti:
-                <a href="#" class="hover:text-blue-600">Produk Terbaru</a>
-                <a href="#" class="hover:text-blue-600">Promo</a> 
-                -->
+            <!-- Area Menu Kosong (Akan diisi oleh Siswa B / C) -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#hero" class="hover:text-indigo-600 transition">Beranda</a>
+                <a href="#main-content" class="hover:text-indigo-600 transition">Produk</a>
+                <a href="#footer" class="hover:text-indigo-600 transition">Kontak</a>
             </nav>
 
-            <!-- Area Fitur Tambahan (Misal: Keranjang Belanja dengan Badge Pulse) -->
+            <!-- Area Fitur Tambahan (Keranjang Belanja) -->
             <div class="flex items-center space-x-4">
-                <div class="relative cursor-pointer p-2">
-                    <!-- Icon keranjang belanja placeholder -->
-                    <span class="text-xl">🛒</span>
-                    <!-- Badge Pulse Aktif dari style.css -->
-                    <span class="cart-badge-pulse absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">0</span>
-                </div>
+                <button aria-label="Keranjang Belanja" class="relative cursor-pointer p-2.5 rounded-full hover:bg-slate-100 transition-colors border border-slate-200/60">
+                    <span class="text-xl leading-none">🛒</span>
+                    <!-- Badge Pulse Aktif -->
+                    <span class="cart-badge-pulse absolute -top-1 -right-1 bg-rose-500 text-white text-[11px] font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white">0</span>
+                </button>
             </div>
         </div>
     </header>
 
     <!-- [TUGAS SISWA A] - STRUKTUR UTAMA HOMEPAGE -->
-    <main class="max-w-7xl mx-auto px-4 py-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex-grow w-full">
         
-        <!-- Konten Hero / Banner Utama Menggunakan Gradasi Custom dari style.css -->
-        <section class="shop-hero-gradient text-center py-16 px-6 rounded-2xl mb-8 shadow-sm">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Selamat Datang di TokoKelompok</h1>
-            <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">Project e-commerce hasil kolaborasi dan kerja keras tim. Temukan produk-produk terbaik pilihan kami di sini.</p>
+        <!-- Hero Section -->
+        <section id="hero" class="shop-hero-gradient relative text-center py-16 md:py-20 px-6 rounded-3xl mb-12 shadow-lg shadow-indigo-100/50 overflow-hidden border border-indigo-100/50">
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <span class="inline-block py-1 px-3.5 bg-indigo-100 text-indigo-700 font-semibold text-xs rounded-full mb-4 uppercase tracking-wider">Project Kelompok</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+                    Selamat Datang di <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">TokoKelompok</span>
+                </h1>
+                <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+                    Project e-commerce hasil kolaborasi dan kerja keras tim. Temukan produk-produk terbaik pilihan kami di sini dengan penawaran menarik.
+                </p>
+                <a href="#main-content" class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-md shadow-indigo-200 transition-all transform hover:-translate-y-0.5">
+                    Jelajahi Produk
+                </a>
+            </div>
         </section>
 
-        <!-- Placeholder untuk Produk (Area Integrasi Anggota Tim Lain) -->
+        <!-- Area Integrasi Anggota Tim -->
         <section id="main-content" class="py-4">
-            <!-- Anggota tim lain bisa menyisipkan grid produk di sini. 
-                 Mereka bisa menggunakan class 'product-card-transition' dan 'product-card-hover' 
-                 yang sudah disediakan di style.css -->
-            <div class="text-center py-12 border-2 border-dashed border-gray-200 rounded-xl">
-                <p class="text-gray-400 text-sm">Bagian konten produk dan katalog utama siap diintegrasikan di area ini.</p>
+            <!-- Siswa B & C dapat menaruh komponen Produk & Footer/Kontak di area ini -->
+            <div class="text-center py-16 px-4 border-2 border-dashed border-indigo-200/80 rounded-2xl bg-white/50 backdrop-blur-sm">
+                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3 text-xl">
+                    ⚡
+                </div>
+                <h3 class="text-base font-bold text-slate-800 mb-1">Area Integrasi Fitur</h3>
+                <p class="text-slate-500 text-sm max-w-md mx-auto">
+                    Bagian katalog produk (Siswa B) dan informasi kontak (Siswa C) siap diintegrasikan pada branch masing-masing.
+                </p>
             </div>
         </section>
         
     </main>
 
-    <!-- Footer Standar Kelompok -->
-    <footer class="bg-white border-t py-6 text-center text-sm text-gray-500 mt-12">
-        <p>&copy; 2026 TokoKelompok. Project Tugas Akhir.</p>
+    <!-- [TUGAS SISWA C] - FOOTER UTAMA -->
+    <footer id="footer" class="bg-white border-t border-slate-200/80 py-8 text-center text-sm text-slate-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-medium">&copy; 2026 TokoKelompok. Project Tugas Akhir Praktik Git.</p>
+        </div>
     </footer>
 
 </body>
