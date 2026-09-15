@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Project - Home</title>
     
-    <!-- Perbaikan Link Play CDN Resmi Tailwind CSS -->
+    <!-- CDN Resmi Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -13,19 +13,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- CSS Custom (Digabungkan Langsung di Sini) -->
+    <!-- Style Custom Kelompok -->
     <style>
-        /* Pengaturan Font Utama */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* Background Hero Section Custom */
         .shop-hero-gradient {
             background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #f3e8ff 100%);
         }
 
-        /* Indikator Animasi Badge Keranjang */
         .cart-badge-pulse {
             animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
@@ -41,89 +38,262 @@
             }
         }
 
-        /* Class Helper untuk Kartu Produk (Siap Dipakai Siswa B) */
-        .product-card-transition {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         .product-card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .product-card-hover:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- [TUGAS SISWA A] - NAVBAR UTAMA -->
+    <!-- =========================================================================
+         [TUGAS SISWA A] - NAVBAR UTAMA
+         ========================================================================= -->
     <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 transition-all shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Logo / Nama Toko -->
             <a href="index.html" class="text-2xl font-extrabold text-indigo-600 tracking-tight flex items-center gap-2 transition hover:opacity-80">
                 <span class="text-2xl">🛍️</span>
                 <span>Toko<span class="text-slate-900">Kelompok</span></span>
             </a>
             
-            <!-- Area Menu Kosong (Akan diisi oleh Siswa B / C) -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
                 <a href="#hero" class="hover:text-indigo-600 transition">Beranda</a>
-                <a href="#main-content" class="hover:text-indigo-600 transition">Produk</a>
-                <a href="#footer" class="hover:text-indigo-600 transition">Kontak</a>
+                <a href="#produk" class="hover:text-indigo-600 transition">Produk</a>
+                <a href="#contact" class="hover:text-indigo-600 transition">Kontak</a>
             </nav>
 
-            <!-- Area Fitur Tambahan (Keranjang Belanja) -->
             <div class="flex items-center space-x-4">
                 <button aria-label="Keranjang Belanja" class="relative cursor-pointer p-2.5 rounded-full hover:bg-slate-100 transition-colors border border-slate-200/60">
                     <span class="text-xl leading-none">🛒</span>
-                    <!-- Badge Pulse Aktif -->
                     <span class="cart-badge-pulse absolute -top-1 -right-1 bg-rose-500 text-white text-[11px] font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white">0</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- [TUGAS SISWA A] - STRUKTUR UTAMA HOMEPAGE -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex-grow w-full">
+    <main class="flex-grow w-full">
         
-        <!-- Hero Section -->
-        <section id="hero" class="shop-hero-gradient relative text-center py-16 md:py-20 px-6 rounded-3xl mb-12 shadow-lg shadow-indigo-100/50 overflow-hidden border border-indigo-100/50">
-            <div class="relative z-10 max-w-3xl mx-auto">
-                <span class="inline-block py-1 px-3.5 bg-indigo-100 text-indigo-700 font-semibold text-xs rounded-full mb-4 uppercase tracking-wider">Project Kelompok</span>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
-                    Selamat Datang di <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">TokoKelompok</span>
-                </h1>
-                <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
-                    Project e-commerce hasil kolaborasi dan kerja keras tim. Temukan produk-produk terbaik pilihan kami di sini dengan penawaran menarik.
-                </p>
-                <a href="#main-content" class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-md shadow-indigo-200 transition-all transform hover:-translate-y-0.5">
-                    Jelajahi Produk
-                </a>
+        <!-- =========================================================================
+             [TUGAS SISWA A] - HERO SECTION
+             ========================================================================= -->
+        <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12">
+            <div class="shop-hero-gradient relative text-center py-16 md:py-20 px-6 rounded-3xl mb-12 shadow-lg shadow-indigo-100/50 overflow-hidden border border-indigo-100/50">
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <span class="inline-block py-1 px-3.5 bg-indigo-100 text-indigo-700 font-semibold text-xs rounded-full mb-4 uppercase tracking-wider">Project Kelompok</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+                        Selamat Datang di <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">TokoKelompok</span>
+                    </h1>
+                    <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+                        Project e-commerce hasil kolaborasi dan kerja keras tim. Temukan produk-produk terbaik pilihan kami di sini dengan penawaran menarik.
+                    </p>
+                    <a href="#produk" class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-md shadow-indigo-200 transition-all transform hover:-translate-y-0.5">
+                        Jelajahi Produk
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Area Integrasi Anggota Tim -->
-        <section id="main-content" class="py-4">
-            <!-- Siswa B & C dapat menaruh komponen Produk & Footer/Kontak di area ini -->
-            <div class="text-center py-16 px-4 border-2 border-dashed border-indigo-200/80 rounded-2xl bg-white/50 backdrop-blur-sm">
-                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3 text-xl">
-                    ⚡
+        <!-- =========================================================================
+             [TUGAS SISWA B] - DAFTAR PRODUK (DARI produk.html)
+             ========================================================================= -->
+        <section id="produk" class="py-12 md:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="inline-block py-1 px-3 bg-indigo-100 text-indigo-700 font-semibold text-xs rounded-full mb-3 uppercase tracking-wider">
+                        Katalog Unggulan
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                        Produk Pilihan Kami
+                    </h2>
+                    <p class="text-slate-600 text-base">
+                        Temukan produk terbaik dengan kualitas terjamin untuk mendukung aktivitas harian Anda.
+                    </p>
                 </div>
-                <h3 class="text-base font-bold text-slate-800 mb-1">Area Integrasi Fitur</h3>
-                <p class="text-slate-500 text-sm max-w-md mx-auto">
-                    Bagian katalog produk (Siswa B) dan informasi kontak (Siswa C) siap diintegrasikan pada branch masing-masing.
-                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                    <!-- Kartu Produk 1 -->
+                    <div class="product-card-hover bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm w-full max-w-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative bg-slate-100 aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphone Wireless" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Elektronik</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 line-clamp-2">Headphone Wireless Premium</h3>
+                                <p class="text-2xl font-black text-indigo-600">Rp 1.500.000</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm shadow-indigo-200 flex items-center justify-center gap-2">
+                                <span>🛒</span> Beli Sekarang
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Produk 2 -->
+                    <div class="product-card-hover bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm w-full max-w-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative bg-slate-100 aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&q=80" alt="Jaket Bomber" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Pakaian</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 line-clamp-2">Jaket Bomber Keren</h3>
+                                <p class="text-2xl font-black text-indigo-600">Rp 450.000</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm shadow-indigo-200 flex items-center justify-center gap-2">
+                                <span>🛒</span> Beli Sekarang
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Produk 3 -->
+                    <div class="product-card-hover bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm w-full max-w-sm flex flex-col justify-between">
+                        <div>
+                            <div class="relative bg-slate-100 aspect-video overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Jam Tangan" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Aksesoris</span>
+                                <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 line-clamp-2">Jam Tangan Minimalis</h3>
+                                <p class="text-2xl font-black text-indigo-600">Rp 850.000</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm shadow-indigo-200 flex items-center justify-center gap-2">
+                                <span>🛒</span> Beli Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================
+             [TUGAS SISWA C] - BAGIAN KONTAK (DARI kontak.html)
+             ========================================================================= -->
+        <section id="contact" class="py-16 md:py-20 bg-white border-t border-slate-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="inline-block py-1 px-3 bg-indigo-100 text-indigo-700 font-semibold text-xs rounded-full mb-3 uppercase tracking-wider">
+                        Layanan Pelanggan
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                        Hubungi Kami
+                    </h2>
+                    <p class="text-slate-600 text-base">
+                        Punya pertanyaan atau ingin bekerja sama? Kirimkan pesan Anda di bawah ini.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    <!-- Informasi Kontak -->
+                    <div class="lg:col-span-5 bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-8 md:p-10 rounded-3xl shadow-xl shadow-indigo-950/10">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Informasi Kontak</h3>
+                        <p class="text-indigo-200 text-sm mb-8 leading-relaxed">
+                            Tim kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui detail di bawah ini.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 text-xl">📍</div>
+                                <div>
+                                    <h4 class="text-xs uppercase font-semibold tracking-wider text-indigo-300">Alamat</h4>
+                                    <p class="text-slate-200 text-sm mt-0.5">Jl. Merdeka No. 123, Jakarta, Indonesia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 text-xl">📧</div>
+                                <div>
+                                    <h4 class="text-xs uppercase font-semibold tracking-wider text-indigo-300">Email</h4>
+                                    <p class="text-slate-200 text-sm mt-0.5">info@tokokelompok.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0 text-xl">📞</div>
+                                <div>
+                                    <h4 class="text-xs uppercase font-semibold tracking-wider text-indigo-300">Telepon</h4>
+                                    <p class="text-slate-200 text-sm mt-0.5">+62 812-3456-7890</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulir Kontak -->
+                    <div class="lg:col-span-7 bg-slate-50 border border-slate-200/80 p-8 md:p-10 rounded-3xl shadow-sm">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Alamat Email</label>
+                                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Pesan Anda</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda di sini..." required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-indigo-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                <span>✉️</span> Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
         
     </main>
 
-    <!-- [TUGAS SISWA C] - FOOTER UTAMA -->
-    <footer id="footer" class="bg-white border-t border-slate-200/80 py-8 text-center text-sm text-slate-500 mt-auto">
-        <div class="max-w-7xl mx-auto px-4">
-            <p class="font-medium">&copy; 2026 TokoKelompok. Project Tugas Akhir Praktik Git.</p>
+    <!-- =========================================================================
+         [TUGAS SISWA C] - FOOTER UTAMA (DARI kontak.html)
+         ========================================================================= -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+                <div class="md:col-span-6 space-y-4">
+                    <a href="index.html" class="text-2xl font-extrabold text-indigo-400 tracking-tight flex items-center gap-2">
+                        <span class="text-2xl">🛍️</span>
+                        <span>Toko<span class="text-white">Kelompok</span></span>
+                    </a>
+                    <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+                        Kami menghadirkan solusi belanja digital dengan produk pilihan terbaik untuk memenuhi kebutuhan Anda.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Navigasi</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#hero" class="hover:text-indigo-400 transition-colors">Beranda</a></li>
+                        <li><a href="#produk" class="hover:text-indigo-400 transition-colors">Katalog Produk</a></li>
+                        <li><a href="#contact" class="hover:text-indigo-400 transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Ikuti Kami</h4>
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 bg-slate-800 hover:bg-indigo-600 text-white rounded-xl flex items-center justify-center transition-colors">FB</a>
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 bg-slate-800 hover:bg-indigo-600 text-white rounded-xl flex items-center justify-center transition-colors">IG</a>
+                        <a href="#" aria-label="LinkedIn" class="w-10 h-10 bg-slate-800 hover:bg-indigo-600 text-white rounded-xl flex items-center justify-center transition-colors">LN</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 TokoKelompok. Hak Cipta Dilindungi. Project Tugas Akhir Praktik Git.</p>
+            </div>
         </div>
     </footer>
 
