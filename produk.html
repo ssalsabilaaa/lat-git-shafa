@@ -3,171 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Produk</title>
+    <title>Daftar Produk - TokoKelompok</title>
+    
+    <!-- CDN Resmi Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* ==========================================================================
-           1. KODE CSS (Desain dan Tampilan)
-           ========================================================================== */
-        
-        /* Pengaturan Dasar */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Class Efek Hover Kartu Produk */
+        .product-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Desain Section Produk */
-        .products-section {
-            padding: 60px 0;
-            background-color: #f9f9f9;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-        }
-
-        /* Layout Grid menggunakan Flexbox */
-        .products-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-
-        /* Desain Kartu Produk */
-        .product-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Efek saat Kursor Mengarah ke Kartu */
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-category {
-            font-size: 0.8rem;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .product-name {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 10px;
-            height: 50px; /* Menjaga tinggi nama produk agar sejajar */
-            overflow: hidden;
-        }
-
-        .product-price {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #ff5722;
-            margin-bottom: 15px;
-        }
-
-        /* Desain Tombol Beli */
-        .btn-buy {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .btn-buy:hover {
-            background-color: #0056b3;
+        .product-card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- ==========================================================================
-       2. KODE HTML (Struktur Halaman)
-       ========================================================================== -->
-    <section class="products-section">
-        <div class="container">
-            <h2 class="section-title">Produk Pilihan Kami</h2>
-            <p class="section-subtitle">Temukan produk terbaik dengan kualitas terjamin untuk Anda</p>
+    <!-- [TUGAS SISWA B] - SECTION KATALOG PRODUK -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="products-grid">
+            <!-- Judul Section -->
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="inline-block py-1 px-3 bg-indigo-100 text-indigo-700 font-semibold text-xs rounded-full mb-3 uppercase tracking-wider">
+                    Katalog Unggulan
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                    Produk Pilihan Kami
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Temukan produk terbaik dengan kualitas terjamin untuk mendukung aktivitas harian Anda.
+                </p>
+            </div>
+            
+            <!-- Grid Produk -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                
                 <!-- Kartu Produk 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <!-- placeholder.com digunakan sebagai gambar sementara, bisa diganti nanti -->
-                        <img src="https://placeholder.com" alt="Produk 1">
+                <div class="product-card-hover bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm w-full max-w-sm flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-slate-100 aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphone Wireless" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Elektronik</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 line-clamp-2">Headphone Wireless Premium</h3>
+                            <p class="text-2xl font-black text-indigo-600">Rp 1.500.000</p>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <span class="product-category">Elektronik</span>
-                        <h3 class="product-name">Headphone Wireless Premium</h3>
-                        <p class="product-price">Rp 1.500.000</p>
-                        <button class="btn-buy">Beli Sekarang</button>
+                    <div class="p-6 pt-0">
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm shadow-indigo-200 flex items-center justify-center gap-2">
+                            <span>🛒</span> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Kartu Produk 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://placeholder.com" alt="Produk 2">
+                <div class="product-card-hover bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm w-full max-w-sm flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-slate-100 aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&q=80" alt="Jaket Bomber" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Pakaian</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 line-clamp-2">Jaket Bomber Keren</h3>
+                            <p class="text-2xl font-black text-indigo-600">Rp 450.000</p>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <span class="product-category">Pakaian</span>
-                        <h3 class="product-name">Jaket Bomber Keren</h3>
-                        <p class="product-price">Rp 450.000</p>
-                        <button class="btn-buy">Beli Sekarang</button>
+                    <div class="p-6 pt-0">
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm shadow-indigo-200 flex items-center justify-center gap-2">
+                            <span>🛒</span> Beli Sekarang
+                        </button>
                     </div>
                 </div>
 
                 <!-- Kartu Produk 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://placeholder.com" alt="Produk 3">
+                <div class="product-card-hover bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm w-full max-w-sm flex flex-col justify-between">
+                    <div>
+                        <div class="relative bg-slate-100 aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Jam Tangan" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider bg-indigo-50 px-2.5 py-1 rounded-md">Aksesoris</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 line-clamp-2">Jam Tangan Minimalis</h3>
+                            <p class="text-2xl font-black text-indigo-600">Rp 850.000</p>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <span class="product-category">Aksesoris</span>
-                        <h3 class="product-name">Jam Tangan Minimalis</h3>
-                        <p class="product-price">Rp 850.000</p>
-                        <button class="btn-buy">Beli Sekarang</button>
+                    <div class="p-6 pt-0">
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm shadow-indigo-200 flex items-center justify-center gap-2">
+                            <span>🛒</span> Beli Sekarang
+                        </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
