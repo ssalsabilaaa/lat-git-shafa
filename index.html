@@ -3,27 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Git dan GitHub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
-            margin-top: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-    </style>
+    <title>E-Commerce Project - Home</title>
+    <!-- Tailwind CSS CDN untuk mempermudah styling kelompok -->
+    <script src="https://tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <h1>Halo, Dunia!</h1>
-    <p>Ini adalah halaman web pertama saya yang berhasil dihubungkan ke GitHub.</p>
-    <p>Ini adalah commit kedua miaw.</p>
+    <!-- [TUGAS SISWA A] - NAVBAR UTAMA -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo / Nama Toko -->
+            <a href="index.html" class="text-2xl font-bold text-blue-600">TokoKelompok</a>
+            
+            <!-- Area Menu Kosong (Akan diisi oleh tim navigasi/kategori) -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <!-- Menu utama diletakkan di sini -->
+            </nav>
+
+            <!-- Area Fitur Tambahan (Misal: Keranjang / Akun) -->
+            <div class="flex items-center space-x-4">
+                <!-- Komponen interaktif diletakkan di sini -->
+            </div>
+        </div>
+    </header>
+
+    <!-- [TUGAS SISWA A] - STRUKTUR UTAMA HOMEPAGE -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Konten Hero / Banner Utama -->
+        <section class="text-center py-12 bg-blue-50 rounded-2xl mb-8">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-2">Selamat Datang di TokoKelompok</h1>
+            <p class="text-gray-600">Project e-commerce kolaborasi tim.</p>
+        </section>
+
+        <!-- Placeholder untuk Produk (Akan diintegrasikan dengan bagian produk) -->
+        <section id="main-content">
+            <!-- Anggota tim lain bisa menyisipkan grid produk di sini -->
+        </section>
+    </main>
+
+    <!-- Footer Standar -->
+    <footer class="bg-white border-t py-6 text-center text-sm text-gray-500 mt-12">
+        <p>&copy; 2026 TokoKelompok. Project Tugas Akhir.</p>
+    </footer>
 
 </body>
 </html>
